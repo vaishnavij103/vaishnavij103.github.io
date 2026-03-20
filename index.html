@@ -1,55 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vaishnavi Jadhav</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial; margin: 0; }
-    .header { background: #0f172a; color: white; padding: 40px; text-align: center; }
-    .section { padding: 20px; }
-    .gray { background: #f1f5f9; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .typing {
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      background: #38bdf8;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.3);
+    }
+
+    /* SKILLS */
+    .skill {
+      margin: 15px 0;
+    }
+
+    .bar {
+      height: 8px;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 8px;
+      background: linear-gradient(to right, #38bdf8, #22c55e);
+      animation: fillAnim 2s ease-in-out;
+    }
+
+    @keyframes fillAnim {
+      from { width: 0; }
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+    }
   </style>
 </head>
 
 <body>
 
-<div class="header">
+<!-- HERO -->
+<div class="hero">
   <h1>Vaishnavi Jadhav</h1>
-  <p>AI/ML Engineer | Full Stack Developer</p>
-  <p>Python | React | GCP</p>
+  <div class="typing" id="typing"></div>
+  <p>Building AI-powered scalable systems with Python, React & GCP</p>
+
+  <button class="btn" onclick="scrollToSection('projects')">Projects</button>
+  <button class="btn" onclick="scrollToSection('contact')">Contact</button>
 </div>
 
-<div class="section">
+<!-- ABOUT -->
+<div class="container">
   <h2>About Me</h2>
-  <p>3+ years experience in Python, React, and GCP. Building AI-powered scalable applications.</p>
+  <p style="text-align:center;">
+    AI/ML Engineer with 3+ years experience building cloud-native applications,
+    automation systems, and intelligent AI solutions using GCP, Gemini, and modern web tech.
+  </p>
 </div>
 
-<div class="section gray">
+<!-- SKILLS -->
+<div class="container">
   <h2>Skills</h2>
-  <ul>
-    <li>Python (Flask, FastAPI, Django)</li>
-    <li>ReactJS, JavaScript</li>
-    <li>GCP, BigQuery, Firestore</li>
-    <li>Docker, CI/CD</li>
-    <li>AI/ML, Gemini</li>
-  </ul>
+
+  <div class="skill">Python
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">React
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">GCP
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
+
 </div>
 
-<div class="section">
+<!-- PROJECTS -->
+<div class="container" id="projects">
   <h2>Projects</h2>
-  <ul>
-    <li>ATS Resume Scanner (AI-based)</li>
-    <li>Document Extraction System</li>
-    <li>Contract Management System</li>
-    <li>AI Reel Generator</li>
-  </ul>
+
+  <div class="grid">
+    <div class="card">
+      <h3>ATS Resume Scanner</h3>
+      <p>AI-based resume-job matching using Gemini</p>
+    </div>
+
+    <div class="card">
+      <h3>Document Extraction System</h3>
+      <p>Automated contract analysis using AI</p>
+    </div>
+
+    <div class="card">
+      <h3>Contract Data Management</h3>
+      <p>End-to-end lifecycle tracking system</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Reel Generator</h3>
+      <p>Automated content creation using AI</p>
+    </div>
+  </div>
 </div>
 
-<div class="section gray">
+<!-- CONTACT -->
+<div class="container" id="contact">
   <h2>Contact</h2>
-  <p>Email: jadhavvaishnavi036@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/vaishnavi-jadhav-909a871b0</p>
+  <p style="text-align:center;">📧 jadhavvaishnavi036@gmail.com</p>
+  <p style="text-align:center;">🔗 linkedin.com/in/vaishnavi-jadhav-909a871b0</p>
 </div>
+
+<footer>
+  © 2026 Vaishnavi Jadhav | Built with ❤️
+</footer>
+
+<!-- JS -->
+<script>
+  // Typing animation
+  const roles = ["AI/ML Engineer", "Full Stack Developer", "GCP Specialist", "Problem Solver"];
+  let i = 0, j = 0, current = "", isDeleting = false;
+
+  function type() {
+    current = roles[i];
+    if (!isDeleting) {
+      document.getElementById("typing").innerText = current.substring(0, j++);
+      if (j > current.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      }
+    } else {
+      document.getElementById("typing").innerText = current.substring(0, j--);
+      if (j === 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+      }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+
+  type();
+
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
